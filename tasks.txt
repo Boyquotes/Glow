@@ -1,0 +1,8 @@
+https://www.youtube.com/watch?v=y6Igao5Uvu8 - sprite base 
+
+https://poppyworks.itch.io/silver - Silver Font
+https://www.youtube.com/watch?v=I_Kzb-d-SvM - settings tutorial
+
+TODO:
+- Player Walking
+- Settings Menu

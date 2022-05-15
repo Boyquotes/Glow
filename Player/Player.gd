@@ -1,5 +1,6 @@
 extends KinematicBody2D
 
+# TODO: More gravity, less floaty.
 export(int) var ACCELERATION = 512
 export(int) var MAX_SPEED = 64
 export(float) var FRICTION = 0.25
@@ -44,17 +45,17 @@ func apply_horizontal_force(input_vector, delta):
 
 func get_input_vector():
 	var input_vector = Vector2.ZERO
-	input_vector.x = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
+	input_vector.x = Input.get_action_strength("right") - Input.get_action_strength("left")
 	return input_vector
 
 func jump_check():
 	if is_on_floor() or coyoteJumpTimer.time_left > 0:
-		if Input.is_action_just_pressed("ui_up"):
+		if Input.is_action_just_pressed("jump"):
 			motion.y = -JUMP_FORCE
 			just_jumped = true
 			snap_vector = Vector2.ZERO
 	else:
-		if Input.is_action_just_released("ui_up") and motion.y < -JUMP_FORCE/2:
+		if Input.is_action_just_released("jump") and motion.y < -JUMP_FORCE/2:
 			motion.y = -JUMP_FORCE / 2
 
 func move():
