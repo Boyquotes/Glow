@@ -1,11 +1,14 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://World/TestBarrier.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Menus/PauseMenu.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Menus/SettingsMenu.tscn" type="PackedScene" id=4]
+[ext_resource path="res://World.gd" type="Script" id=5]
+[ext_resource path="res://UI/DialogueManager.tscn" type="PackedScene" id=6]
 
 [node name="World" type="Node2D"]
+script = ExtResource( 5 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 38, 64 )
@@ -23,3 +26,20 @@ position = Vector2( 141, 137 )
 visible = false
 
 [node name="SettingsMenu" parent="UI/PauseMenu" instance=ExtResource( 4 )]
+
+[node name="Narration" type="Node" parent="UI"]
+
+[node name="DialogueManager" parent="UI/Narration" instance=ExtResource( 6 )]
+
+[node name="NextLabel" type="Label" parent="UI/Narration"]
+show_behind_parent = true
+margin_left = 270.0
+margin_top = 157.0
+margin_right = 312.0
+margin_bottom = 173.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "⒅ Next"
+
+[connection signal="finished" from="UI/Narration/DialogueManager" to="." method="_on_DialogueManager_finished"]
+[connection signal="message_completed" from="UI/Narration/DialogueManager" to="." method="_on_DialogueManager_message_completed"]
+[connection signal="message_requested" from="UI/Narration/DialogueManager" to="." method="_on_DialogueManager_message_requested"]

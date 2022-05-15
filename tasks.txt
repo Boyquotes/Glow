@@ -2,7 +2,22 @@ https://www.youtube.com/watch?v=y6Igao5Uvu8 - sprite base
 
 https://poppyworks.itch.io/silver - Silver Font
 https://www.youtube.com/watch?v=I_Kzb-d-SvM - settings tutorial
+https://worldeater-dev.itch.io/bittersweet-birthday/devlog/224241/howto-a-simple-dialogue-system-in-godot - dialogue tutorial
 
 TODO:
 - Player Walking
 - Settings Menu
+
+- Outlin character sprite
+- Replace dialogue background
+- Replace dialogue SOUND 
+
+Player
+- outline
+- glow
+- jump sound
+- jump particles?
+- glow only on jump?
+
+
+bg music when see the light only, scenic view and maybe title screen

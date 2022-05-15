@@ -1,0 +1,43 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://UI/Dialogue_Background_Temporary.png" type="Texture" id=1]
+[ext_resource path="res://UI/Dialogue.gd" type="Script" id=2]
+[ext_resource path="res://Sounds/typing.wav" type="AudioStream" id=3]
+
+[node name="Dialogue" type="Control"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = -49.0
+margin_right = 320.0
+margin_bottom = -49.0
+script = ExtResource( 2 )
+
+[node name="Background" type="NinePatchRect" parent="."]
+margin_right = 320.0
+margin_bottom = 49.0
+texture = ExtResource( 1 )
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+
+[node name="Speech" type="RichTextLabel" parent="."]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 417.0
+margin_bottom = 62.0
+rect_scale = Vector2( 0.75, 0.75 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+bbcode_enabled = true
+
+[node name="TypingTimer" type="Timer" parent="."]
+wait_time = 0.025
+
+[node name="VoicePlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+volume_db = -5.0
+
+[connection signal="timeout" from="TypingTimer" to="." method="_on_TypingTimer_timeout"]
+[connection signal="finished" from="VoicePlayer" to="." method="_on_VoicePlayer_finished"]

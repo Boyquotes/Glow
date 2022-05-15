@@ -9,7 +9,8 @@ var defaultKeybinds = {
 	"left": 65,
 	"right": 68,
 	"cancel": 16777217,
-	"glow": 32
+	"glow": 32,
+	"next": 16777221
 }
 
 var buttons = {}
