@@ -16,9 +16,10 @@ func _ready():
 	if configFile.load(filepath) == OK:
 		for key in configFile.get_section_keys("keybinds"):
 			var val = configFile.get_value("keybinds", key)
-			print(key, " : ", OS.get_scancode_string(val))
-			
-			keybinds[key] = val
+			if str(val) != "":
+				keybinds[key] = val
+			else:
+				keybinds[key] = null
 	else:
 		print("CONFIG FILE NOT FOUND")
 		get_tree().quit()
@@ -33,14 +34,17 @@ func set_game_binds():
 		if !actionList.empty():
 			InputMap.action_erase_event(key, actionList[0])
 		
-		var new_key = InputEventKey.new()
-		new_key.set_scancode(val)
-		InputMap.action_add_event(key, new_key)
+		if val != null:
+			var new_key = InputEventKey.new()
+			new_key.set_scancode(val)
+			InputMap.action_add_event(key, new_key)
 
 func write_game_binds():
 	for key in keybinds.keys():
 		var val = keybinds[key]
-		configFile.set_value("keybinds", key, val)
-	
+		if val != null:
+			configFile.set_value("keybinds", key, val)
+		else:
+			configFile.set_value("keybinds", key, "")
 	configFile.save(filepath)
 	

@@ -29,7 +29,11 @@ func _ready():
 		
 		label.text = key
 		var button_value = keybinds[key]
-		button.text = OS.get_scancode_string(button_value)
+		
+		if button_value != null:
+			button.text = OS.get_scancode_string(button_value)
+		else:
+			button.text = "Unassigned"
 		
 		button.set_script(keybindButtonScript)
 		button.key = key
