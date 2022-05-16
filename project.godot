@@ -10,13 +10,14 @@ config_version=4
 
 [application]
 
-config/name="Don't Come Outside"
+config/name="Glow"
 run/main_scene="res://Menus/StartMenu.tscn"
 config/icon="res://icon.png"
 
 [autoload]
 
 Global="*res://global.gd"
+Music="*res://Sounds/Music.tscn"
 
 [display]
 
