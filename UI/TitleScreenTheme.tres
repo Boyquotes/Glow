@@ -5,8 +5,12 @@
 
 [resource]
 Button/colors/font_color = Color( 0.847059, 0.705882, 0.505882, 1 )
+Button/colors/font_color_focus = Color( 0.0431373, 0.0980392, 0.101961, 1 )
 Button/colors/font_color_hover = Color( 0.0431373, 0.0980392, 0.101961, 1 )
+Button/colors/font_color_pressed = Color( 0.0431373, 0.0980392, 0.101961, 1 )
+Button/styles/focus = ExtResource( 2 )
 Button/styles/hover = ExtResource( 2 )
 Button/styles/normal = ExtResource( 1 )
+Button/styles/pressed = ExtResource( 2 )
 Label/colors/font_color = Color( 0.847059, 0.705882, 0.505882, 1 )
 Panel/styles/panel = ExtResource( 1 )
