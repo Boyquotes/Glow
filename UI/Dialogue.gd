@@ -1,4 +1,4 @@
-extends Control
+extends CanvasLayer
 
 onready var speech = get_node("Speech")
 onready var typingTimer = get_node("TypingTimer")

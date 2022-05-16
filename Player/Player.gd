@@ -11,6 +11,9 @@ export(int) var MAX_SLOPE_ANGLE = 46
 onready var coyoteJumpTimer = $CoyoteJumpTimer
 onready var sprite = $Sprite
 onready var spriteAnimator = $SpriteAnimator
+onready var glowLight = $Glow
+onready var glowTimer = $GlowTimer
+onready var glowCooldownTimer = $GlowCooldownTimer
 
 var motion = Vector2.ZERO
 var snap_vector = Vector2.ZERO
@@ -23,6 +26,7 @@ func _physics_process(delta):
 	apply_horizontal_force(input_vector, delta)
 	apply_friction(input_vector, FRICTION)
 	update_snap_vector()
+	glow_check()
 	jump_check()
 	apply_gravity(delta)
 	update_animations(input_vector)
@@ -96,3 +100,21 @@ func update_animations(input_vector):
 func update_snap_vector():
 	if is_on_floor():
 		snap_vector = Vector2.DOWN
+
+func glow_check():
+	print("checking glow")
+	if glowTimer.time_left == 0 and glowCooldownTimer.time_left == 0:
+		if Input.is_action_just_pressed("glow"):
+			glowTimer.start()
+			glowCooldownTimer.start()
+			print("starting glow")
+			print(str(glowCooldownTimer.time_left))
+			glowLight.visible = true
+	elif glowTimer.time_left > 0:
+		print("still glowing")
+		print(str(glowCooldownTimer.time_left))
+		glowLight.visible = true
+	else:
+		print("Glow finished!")
+		print(str(glowCooldownTimer.time_left))
+		glowLight.visible = false

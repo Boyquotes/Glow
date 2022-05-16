@@ -4,17 +4,14 @@
 [ext_resource path="res://UI/Dialogue.gd" type="Script" id=2]
 [ext_resource path="res://Sounds/typing.wav" type="AudioStream" id=3]
 
-[node name="Dialogue" type="Control"]
-anchor_top = 1.0
-anchor_bottom = 1.0
-margin_top = -49.0
-margin_right = 320.0
-margin_bottom = -49.0
+[node name="Dialogue" type="CanvasLayer"]
 script = ExtResource( 2 )
 
 [node name="Background" type="NinePatchRect" parent="."]
-margin_right = 320.0
-margin_bottom = 49.0
+margin_left = -1.0
+margin_top = 131.0
+margin_right = 319.0
+margin_bottom = 180.0
 texture = ExtResource( 1 )
 patch_margin_left = 5
 patch_margin_top = 5
@@ -24,10 +21,10 @@ patch_margin_bottom = 5
 [node name="Speech" type="RichTextLabel" parent="."]
 anchor_top = 1.0
 anchor_bottom = 1.0
-margin_left = 7.0
-margin_top = 7.0
-margin_right = 417.0
-margin_bottom = 62.0
+margin_left = 6.0
+margin_top = -45.0
+margin_right = 416.0
+margin_bottom = 10.0
 rect_scale = Vector2( 0.75, 0.75 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 bbcode_enabled = true

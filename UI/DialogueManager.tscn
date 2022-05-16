@@ -2,5 +2,5 @@
 
 [ext_resource path="res://UI/DialogueManager.gd" type="Script" id=1]
 
-[node name="DialogueManager" type="Node"]
+[node name="DialogueManager" type="CanvasLayer"]
 script = ExtResource( 1 )
