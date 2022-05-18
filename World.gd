@@ -8,7 +8,7 @@ onready var nextLabel = get_node("UI/Narration/NextLabel")
 	# Stretch goal.
 	# Can we pause the animation UNTIL next is clicked?
 
-var message_list = ["Fucknuggets!", "Welcome to Godot Wild Jam #45", "Lorem ipsum poo poo poo\nLorem ipsum poo poo poo\nLorem ipsum poo poo poo"]
+var message_list = ["Fucknuggets!", "Welcome to Godot Wild Jam #45", "Lorem ipsum poo poo poo\nLorem ipsum poo poo poo"]
 func _ready():
 	dialogueManager.show_message(message_list, 0)
 

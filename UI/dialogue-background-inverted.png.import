@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Dialogue_Background_Temporary.png-cb9f558189d59fb819eb17f56e637493.stex"
+path="res://.import/dialogue-background-inverted.png-e19f6ed79402ddc04d760f9a02c313a1.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://UI/Dialogue_Background_Temporary.png"
-dest_files=[ "res://.import/Dialogue_Background_Temporary.png-cb9f558189d59fb819eb17f56e637493.stex" ]
+source_file="res://UI/dialogue-background-inverted.png"
+dest_files=[ "res://.import/dialogue-background-inverted.png-e19f6ed79402ddc04d760f9a02c313a1.stex" ]
 
 [params]
 

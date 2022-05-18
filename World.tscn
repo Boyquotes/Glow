@@ -65,11 +65,11 @@ visible = false
 
 [node name="NextLabel" type="Label" parent="UI/Narration"]
 show_behind_parent = true
-margin_left = 270.0
-margin_top = 157.0
-margin_right = 312.0
-margin_bottom = 173.0
-custom_colors/font_color = Color( 0, 0, 0, 1 )
+margin_left = 263.0
+margin_top = 155.0
+margin_right = 305.0
+margin_bottom = 171.0
+custom_colors/font_color = Color( 0.847059, 0.705882, 0.505882, 1 )
 text = "⒅ Next"
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
